@@ -48,7 +48,6 @@ class Server:
         my_range = index_range(page, page_size)
         data = self.dataset()
         return data[my_range[0]: my_range[1]]
-        print(len(x))
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
