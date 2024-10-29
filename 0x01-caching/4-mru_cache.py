@@ -7,7 +7,7 @@ BaseCaching = __import__('base_caching').BaseCaching
 class MRUCache(BaseCaching):
     """Class that inherits from BaseCaching and is an MRU caching system"""
     def __init__(self):
-        """Initializes the LRUCache instance.
+        """Initializes the MRUCache instance.
             Calls the parent class's constructor to initialize the
             `cache_data` dictionary and initializes an additional list
             `key_list` to keep track of the order of keys for MRU eviction.
@@ -27,7 +27,7 @@ class MRUCache(BaseCaching):
             the item is added to the cache dictionary.
 
         -   If adding a new item exceeds the cache limit defined in
-            `BaseCaching.MAX_ITEMS`, the most recently used (LRU) item
+            `BaseCaching.MAX_ITEMS`, the most recently used (MRU) item
             is removed.
 
         -   If the `key` already exists, it removes the key from
