@@ -25,9 +25,6 @@ class LIFOCache(BaseCaching):
         -   If both `key` and `item` are provided,
             the item is added to the cache dictionary.
 
-        -   If both `key` and `item` are provided,
-            the item is added to the cache dictionary.
-
         -   If adding a new item exceeds the cache limit defined in
             `BaseCaching.MAX_ITEMS`, the most recent item added to
             the cache is removed (LIFO order).
