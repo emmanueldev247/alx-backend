@@ -48,17 +48,16 @@ class LFUCache(BaseCaching):
             position in `key_list` is updated to reflect recent access.
         """
         if key and item:
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS and \
-                                       key not in self.cache_data:
-                self.evict()
             if key in self.cache_data:
                 self.key_list.remove(key)
                 self.key_freq[key] += 1
             else:
+                if len(self.cache_data) >= BaseCaching.MAX_ITEMS and \
+                                          key not in self.cache_data:
+                    self.evict()
                 self.key_freq[key] = 1
 
             self.key_list.append(key)
-
             self.cache_data[key] = item
 
     def get(self, key):
@@ -105,5 +104,5 @@ class LFUCache(BaseCaching):
 
         del self.cache_data[del_key]
         del self.key_freq[del_key]
-        self.key_list.remove(key)
+        self.key_list.remove(del_key)
         print(f'DISCARD: {del_key}')
