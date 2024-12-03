@@ -3,3 +3,7 @@
 *main.py
 *.pyc
 __p*
+*main.js
+*.sw?
+node_modules/
+redis-stable/
